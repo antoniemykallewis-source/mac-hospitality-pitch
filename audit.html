@@ -108,7 +108,12 @@
 <div class="boundary"><strong>What this does not prove</strong><p>Lab scores are not lost bookings. We did not measure real guest phones or claim Core Web Vitals field failures. Compress video and images first; keep the look.</p></div>
 </div></section>
 
-<section id="ads" class="section"><div class="wrap"><div class="eyebrow">DEEP DIVE / PAID ADS &amp; PIXELS</div><div class="section-top"><h2 class="display">PUBLIC LIBRARIES.<br>HONEST CAVEATS.</h2><p>Google Ads Transparency and Meta Ad Library checked November 6, 2026. Public keyword and domain search is not private ad-account access.</p></div>
+<section id="ads" class="section"><div class="wrap"><div class="eyebrow">DEEP DIVE / PAID ADS &amp; PIXELS</div><div class="section-top"><h2 class="display">TAGS ARE LIVE.<br>ADS ARE NOT.</h2><p>Google Ads Transparency, Meta Ad Library, live page tags, and GTM container dumps checked November 6, 2026. Public search is not private ad-account access. Zero mention of agency fees here: this page only documents what the sites and public libraries show.</p></div>
+<div class="pixel-grid" style="margin-bottom:22px">
+<article><span class="pill">Headline</span><h4>0 active Google ads</h4><p>All 6 domains returned zero active creatives in Ads Transparency. Only 2 old corporate text ads, last shown Feb 6, 2026.</p></article>
+<article><span class="pill">IDs found</span><h4>3 Google Ads IDs</h4><p><code>AW-17294026445</code> (MAC via GTM-53QDCPGX). <code>AW-7823369886</code> and <code>AW-18496460454</code> (MIX via GTM-PCBNSJN9).</p></article>
+<article><span class="pill">Blind venues</span><h4>Iron Horse + Mas Taco</h4><p>Zero Meta Pixel, zero Google Ads tag, zero GTM. Only basic GA4. Facebook domain verification TXT exists, but visitors cannot be retargeted.</p></article>
+</div>
 <table class="audit-table"><thead><tr><th>Source</th><th>Query</th><th>Result</th><th>Reading</th></tr></thead><tbody>
 <tr><td><b>Google Ads</b></td><td>machospitalitygroup.com</td><td>2 historical text ads by Syndicate Labs</td><td>Last shown Feb 6, 2026. One still mentions a “Summer Sale.” Not proof of current Nov 6 spend.</td></tr>
 <tr><td><b>Google Ads</b></td><td>mixdowntown.net, cafeteria15l.com, ironhorsetavern.net, mastacobar.com, vivacasalola.com</td><td>0 ads each</td><td>No current ads returned for any venue domain.</td></tr>
@@ -116,17 +121,22 @@
 <tr><td><b>Meta Ad Library</b></td><td>Exact phrases for MAC, Cafeteria 15L, Iron Horse Tavern, Mas Taco Bar, Viva Casa Lola</td><td>0 brand-run matches</td><td>Keyword zero is not proof of zero ads under other page identities or dark setups.</td></tr>
 <tr><td><b>Meta Ad Library</b></td><td>Exact phrase “Casa Lola”</td><td>~24 unrelated</td><td>Drama apps / fashion, not the Sacramento restaurant.</td></tr>
 </tbody></table>
-<div class="subhead"><span class="eyebrow">Pixel &amp; tag inventory (raw HTML)</span><h3>Trackers we can see in page code.</h3><p>GTM may load more tags than the raw HTML shows. Treat “none visible” as unverified for tags loaded only inside GTM.</p></div>
-<div class="pixel-grid">
-<article><span class="pill">MIX Downtown</span><h4>Meta Pixel + GA4 + GTM</h4><p>Pixel present in HTML. Can retarget site visitors if ads are launched.</p></article>
-<article><span class="pill">Cafeteria 15L</span><h4>Meta Pixel + GA4</h4><p>Pixel and GA4 present in HTML.</p></article>
-<article><span class="pill">Casa Lola</span><h4>Meta Pixel + two GA4 IDs</h4><p>GA4 IDs <code>G-17DY1NN7S5</code> and <code>G-EGT4XEZZ0Q</code> on one page. Visits may split or double-count.</p></article>
-<article><span class="pill">Iron Horse</span><h4>GA4 only in HTML</h4><p>GA4 <code>G-WXFZF6PN1T</code>. No Meta Pixel visible in raw HTML.</p></article>
-<article><span class="pill">Mas Taco Bar</span><h4>GA4 only in HTML</h4><p>GA4 present. No Meta Pixel visible in raw HTML.</p></article>
-<article><span class="pill">MAC Group</span><h4>GTM only in HTML</h4><p>GTM <code>GTM-53QDCPGX</code>. No GA4 or Meta Pixel visible outside GTM.</p></article>
+<div class="subhead"><span class="eyebrow">Verified tag inventory (HTML + GTM)</span><h3>Exact IDs pulled from live sites and containers.</h3><p>GTM container dumps confirm Google Ads conversion IDs that raw HTML alone does not always show. Treat “none” as none found in HTML or the published GTM container.</p></div>
+<table class="audit-table"><thead><tr><th>Site</th><th>GTM</th><th>Google Ads IDs</th><th>Meta Pixel</th><th>GA4</th><th>Status</th></tr></thead><tbody>
+<tr><td><b>machospitalitygroup.com</b></td><td><code>GTM-53QDCPGX</code></td><td><code>AW-17294026445</code></td><td>not in raw HTML (GTM may load more)</td><td><code>G-P78HV7YB3F</code> via GTM</td><td>Wired, 0 public ads</td></tr>
+<tr><td><b>cafeteria15l.com</b></td><td>none</td><td>none</td><td><code>1699290390323194</code></td><td><code>G-W6FJQT601T</code></td><td>Pixel + GA4 only</td></tr>
+<tr><td><b>mixdowntown.net</b></td><td><code>GTM-PCBNSJN9</code></td><td><code>AW-7823369886</code>, <code>AW-18496460454</code></td><td><code>1048907557443820</code> + <code>813816152081593</code> (two pixels)</td><td><code>G-WGPRTC2QSV</code></td><td>Wired, duplicate pixels</td></tr>
+<tr><td><b>vivacasalola.com</b></td><td>none</td><td>none</td><td><code>2055895294814587</code></td><td><code>G-17DY1NN7S5</code> + <code>G-EGT4XEZZ0Q</code></td><td>Dual GA4 on one page</td></tr>
+<tr><td><b>ironhorsetavern.net</b></td><td>none</td><td>none</td><td><b>NONE</b></td><td><code>G-WXFZF6PN1T</code></td><td>BLIND for paid ads</td></tr>
+<tr><td><b>mastacobar.com</b></td><td>none</td><td>none</td><td><b>NONE</b></td><td><code>G-11GW7V7BL5</code></td><td>BLIND for paid ads</td></tr>
+</tbody></table>
+<div class="pixel-grid" style="margin-top:22px">
+<article><span class="pill">Fragmentation</span><h4>3 Ads IDs · 4 pixels · 7 GA4</h4><p>Across 6 sites: 3 Google Ads IDs, 4 Meta Pixels on just 3 venues, and 7 different GA4 properties (Casa Lola fires two at once).</p></article>
+<article><span class="pill">DNS vs site</span><h4>FB domain verify, no pixel</h4><p>Facebook domain verification TXT records exist for cafeteria15l.com, ironhorsetavern.net, and mastacobar.com. Iron Horse and Mas Taco still ship no Meta Pixel.</p></article>
+<article><span class="pill">Missing channels</span><h4>No TikTok / Bing / Yelp</h4><p>No TikTok, Bing/UET, or Yelp ad pixels found on the scanned pages.</p></article>
 </div>
-<div class="caveat"><b>Caveats</b>Public Meta keyword search does not prove zero ads under other page identities. Google historical ads are not current campaigns. A pixel means tracking or retargeting is possible. It does not prove ads are running. Spend, ROAS and creative tests need account access.</div>
-<p style="margin-top:22px"><a class="text-link" href="https://adstransparency.google.com/?domain=machospitalitygroup.com&amp;region=US" target="_blank" rel="noopener">Open Google Ads Transparency ›</a></p>
+<div class="caveat"><b>Caveats</b> Public Meta keyword search does not prove zero ads under other page identities. Google historical ads are not current campaigns. A conversion tag means tracking was wired up. It does not prove ads are spending right now. Spend, ROAS and creative tests need account access.</div>
+<p style="margin-top:22px"><a class="text-link" href="https://adstransparency.google.com/?domain=machospitalitygroup.com&amp;region=US" target="_blank" rel="noopener">Open Google Ads Transparency ›</a> · <a class="text-link" href="index.html#paid-ads">Back to pitch callout ›</a></p>
 </div></section>
 
 <section id="schema-links" class="section search-section"><div class="wrap"><div class="eyebrow">DEEP DIVE / SCHEMA, LINKS &amp; MAPS</div><div class="section-top"><h2 class="display">SEARCH CODE.<br>BROKEN DOORS.</h2><p>Checked in page code and live URLs on November 6, 2026. None of the six sites includes Restaurant or LocalBusiness schema. Paragary’s and Urban Roots both do.</p></div>
